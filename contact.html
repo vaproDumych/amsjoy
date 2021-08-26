@@ -11,6 +11,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <style>
         body {
             font: 400 15px Lato, sans-serif;
@@ -381,6 +387,23 @@
             border: none;
         }
 
+        form.contact-form div.date {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        form.contact-form div.date div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form.contact-form div.date input {
+            padding: 6px;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
         @keyframes slide {
             0% {
                 opacity: 0;
@@ -476,8 +499,10 @@
                 </div>
                 <div>
                     <br>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> Accommodation address - Prinsengracht 489-2 A; 1016 HP Amsterdam</p>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> Registered office address - Arent Janszoon Ernststr 727-L; 1082 LJ Amsterdam</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> Accommodation address - Prinsengracht 489-2
+                        A; 1016 HP Amsterdam</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> Registered office address - Arent Janszoon
+                        Ernststr 727-L; 1082 LJ Amsterdam</p>
                     <p><span class="glyphicon glyphicon-phone"></span> +312 02 41 70 01</p>
                     <p><span class="glyphicon glyphicon-envelope"></span> info@amsjoy.com</p>
                 </div>
@@ -495,12 +520,27 @@
                         </div>
                         <div class="email-mobile">
                             <div class="form-field col">
+                                <label class="label" for="phone">Phone</label>
+                                <input id="phone" class="input-tePhoneinput" type="tel" required>
+                            </div>
+                            <div class="form-field col">
                                 <label class="label" for="email">E-mail</label>
                                 <input id="email" class="input-text js-input" type="email" required>
                             </div>
-                            <div class="form-field col">
-                                <label class="label" for="phone">Phone</label>
-                                <input id="phone" class="input-tePhoneinput" type="tel" required>
+                        </div>
+                        <div class="date">
+                            <div class="form-field">
+                                <label for="arrival-date">Arrival date - Departure date</label>
+                                <input type="text" name="daterange" />
+                            </div>
+                            <div class="guests">
+                                <label for="guests">Number of people</label>
+                                <select name="guests" id="guests">
+                                    <option value="1">1</option>
+                                    <option value="2">1</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
                             </div>
                         </div>
 
@@ -523,59 +563,70 @@
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.0483961484892!2d4.880984015994948!3d52.369542455120786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c2de8576af%3A0xcca187b49f7ee2af!2sPrinsengracht%20489%2C%202a%2C%201016%20HP%20Amsterdam%2C%20Netherlands!5e0!3m2!1sen!2sua!4v1629969885902!5m2!1sen!2sua"
                 width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <footer class="container-fluid text-center">
-                    <a href="#myPage" title="To Top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                    </a>
-                    <p>© 2021 Amsjoy</p>
-                </footer>
-            <script>
-                $(document).ready(function () {
-                    // Add smooth scrolling to all links in navbar + footer link
-                    $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-                        // Make sure this.hash has a value before overriding default behavior
-                        if (this.hash !== "") {
-                            // Prevent default anchor click behavior
-                            event.preventDefault();
+        </div>
+        <footer class="container-fluid text-center">
+            <a href="#myPage" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <p>© 2021 Amsjoy</p>
+        </footer>
+        <script>
+            $(document).ready(function () {
+                // Add smooth scrolling to all links in navbar + footer link
+                $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
 
-                            // Store hash
-                            var hash = this.hash;
+                        // Store hash
+                        var hash = this.hash;
 
-                            // Using jQuery's animate() method to add smooth page scroll
-                            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                            $('html, body').animate({
-                                scrollTop: $(hash).offset().top
-                            }, 900, function () {
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 900, function () {
 
-                                // Add hash (#) to URL when done scrolling (default click behavior)
-                                window.location.hash = hash;
-                            });
-                        } // End if
-                    });
-
-                    $(window).scroll(function () {
-                        $(".slideanim").each(function () {
-                            var pos = $(this).offset().top;
-
-                            var winTop = $(window).scrollTop();
-                            if (pos < winTop + 600) {
-                                $(this).addClass("slide");
-                            }
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
                         });
+                    } // End if
+                });
+
+                $(window).scroll(function () {
+                    $(".slideanim").each(function () {
+                        var pos = $(this).offset().top;
+
+                        var winTop = $(window).scrollTop();
+                        if (pos < winTop + 600) {
+                            $(this).addClass("slide");
+                        }
                     });
-                })
+                });
+            })
 
-                const navbar = document.querySelector('.navbar');
-                window.onscroll = () => {
-                    if (window.scrollY > 300) {
-                        navbar.classList.add('nav-active');
-                    } else {
-                        navbar.classList.remove('nav-active');
+            const navbar = document.querySelector('.navbar');
+            window.onscroll = () => {
+                if (window.scrollY > 300) {
+                    navbar.classList.add('nav-active');
+                } else {
+                    navbar.classList.remove('nav-active');
+                }
+            };
+
+
+            $(function () {
+                $('input[name="daterange"]').daterangepicker({
+                    timePicker: true,
+                    startDate: moment().startOf('hour'),
+                    endDate: moment().startOf('hour').add(32, 'hour'),
+                    locale: {
+                        format: 'M/DD hh:mm A'
                     }
-                };
-
-            </script>
+                });
+            });
+        </script>
 </body>
 
 </html>
