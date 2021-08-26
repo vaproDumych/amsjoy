@@ -327,6 +327,74 @@
             list-style: none;
         }
 
+        div.reviews {
+            background-color: #f6f6f6;
+            margin-bottom: 50px;
+        }
+
+        /* Testimotionals */
+        * {
+            box-sizing: border-box;
+        }
+
+        .page-width {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .quotes {
+            display: flex;
+            padding: 5rem 2rem;
+            align-items: center;
+        }
+
+        .quotes-slide {
+            width: 33%;
+            padding: 3rem;
+            background-color: white;
+            opacity: .4;
+            cursor: pointer;
+            box-shadow: 0px 0px 0px 1px #d5d5d5;
+            line-height: 1.75;
+            font-family: 'Roboto', sans-serif;
+            transition: all .5s ease;
+            outline: none;
+        }
+
+        .quotes-slide--active {
+            transform: scale(1.2);
+            z-index: 10;
+            opacity: 1;
+            border: none;
+            box-shadow: 1px 0px 10px 5px #eaeaea;
+            color: #222222;
+        }
+
+        blockquote {
+            margin: 0;
+            border: none;
+        }
+
+        cite {
+            font-style: normal;
+            font-family: 'Roboto', sans-serif;
+            font-size: .9rem;
+        }
+
+        cite::before {
+            content: '\2014 \0020';
+        }
+
+        .icon {
+            width: 25px;
+            height: 25px;
+            fill: #1a73e8;
+        }
+
         @keyframes slide {
             0% {
                 opacity: 0;
@@ -415,7 +483,10 @@
                 <h4>A cozy house in the heart of Amsterdam on Prinsengracht, which considered to be a central and
                     sophisticated location.
                 </h4><br>
-                <h4>Amsjoy offers room with free WiFi, conveniently located within a walking distance from Anne Frank House and Leidseplein. The property is located within a 9-minute walk from Flower Market, and a 9-minute walk from Royal Palace Amsterdam on Dam Square. The property is set in Amsterdam City Center district, close to Rembrandtplein.
+                <h4>Amsjoy offers room with free WiFi, conveniently located within a walking distance from Anne Frank
+                    House and Leidseplein. The property is located within a 9-minute walk from Flower Market, and a
+                    9-minute walk from Royal Palace Amsterdam on Dam Square. The property is set in Amsterdam City
+                    Center district, close to Rembrandtplein.
                 </h4>
                 <h4>The units in the
                     bed and breakfast are equipped with a kettle. Guest rooms will provide guests with a microwave. In
@@ -514,6 +585,70 @@
         </div>
         <br>
         <br>
+        <div class="reviews">
+            <br>
+            <h2 class="text-center">WHAT GUESTS SAT ABOYT US</h2><br>
+            <div class="quotes page-width">
+                
+                <div class="quotes-slide slideshow__slide--active" data-slider-slide-index="0" aria-hidden="false"
+                    tabindex="-1">
+                    <blockquote class="quotes-slider__text text-left">
+                        <span class="quote-icon">
+                            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-quote"
+                                viewBox="0 0 41 35">
+                                <path
+                                    d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z">
+                                </path>
+                            </svg>
+                        </span>
+    
+                        <div class="content">
+                            <p>The owner was very nice and seems to be a trustworthy fellow. The hotel was in a prime
+                                location in a beautiful neighborhood. The room was equipped with kettle, microwave and a
+                                mobile fan.
+                            </p>
+                        </div>
+                    </blockquote>
+                </div>
+    
+                <div class="quotes-slide slideshow__slide--active" data-slider-slide-index="1" aria-hidden="false"
+                    tabindex="-1">
+                    <blockquote class="quotes-slider__text text-left">
+                        <span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation"
+                                class="icon icon-quote" viewBox="0 0 41 35">
+                                <path
+                                    d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z">
+                                </path>
+                            </svg>
+                        </span>
+    
+                        <div class="content">
+                            <p>We loved the location, great price and comfortable place to stay. Would definitely stay again.
+                            </p>
+                        </div>
+                    </blockquote>
+                </div>
+    
+                <div class="quotes-slide slideshow__slide--active" data-slider-slide-index="2" aria-hidden="false"
+                    tabindex="-1">
+                    <blockquote class="quotes-slider__text text-left">
+                        <span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation"
+                                class="icon icon-quote" viewBox="0 0 41 35">
+                                <path
+                                    d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z">
+                                </path>
+                            </svg>
+                        </span>
+                        <div class="content">
+                            <p>Very central location, very nice hosts. Perfect for travelers looking for just a simple place to sleep for the night and exploring the city during the day. 
+                            </p>
+                        </div>
+                    </blockquote>
+                </div>
+    
+            </div>
+        </div>
+
         <!-- Image of location/map -->
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.0483961484892!2d4.880984015994948!3d52.369542455120786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c2de8576af%3A0xcca187b49f7ee2af!2sPrinsengracht%20489%2C%202a%2C%201016%20HP%20Amsterdam%2C%20Netherlands!5e0!3m2!1sen!2sua!4v1629969885902!5m2!1sen!2sua"
@@ -571,6 +706,21 @@
                 }
             };
 
+
+            var testimonialPage = document.querySelector(".quotes-slide[data-slider-slide-index='1']");
+            testimonialPage.classList.add("quotes-slide--active");
+
+            document.querySelector(".quotes").addEventListener("mouseout", function () {
+                document.querySelector(".quotes-slide--active").classList.remove("quotes-slide--active");
+                document.querySelector(".quotes-slide[data-slider-slide-index='1']").classList.add("quotes-slide--active");
+            });
+
+            document.querySelectorAll(".quotes-slide").forEach(function (elem) {
+                return elem.addEventListener("mouseover", function () {
+                    document.querySelector(".quotes-slide--active").classList.remove("quotes-slide--active");
+                    this.classList.add("quotes-slide--active");
+                });
+            });
         </script>
 </body>
 
